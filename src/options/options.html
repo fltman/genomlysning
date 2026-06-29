@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Genomlysning – inställningar</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="head">
+        <h1>Genomlysning – inställningar</h1>
+        <p class="subtitle">
+          Granska vilken sajt som helst: kartlägg spårningen, läs cookie-policyn
+          mot verkligheten, och se rakt ut var underdriften sitter.
+        </p>
+      </header>
+
+      <form id="settings-form" autocomplete="off" novalidate>
+        <!-- API-nyckel -->
+        <section class="field">
+          <label for="api-key">OpenRouter API-nyckel</label>
+          <div class="key-row">
+            <input
+              type="password"
+              id="api-key"
+              name="apiKey"
+              placeholder="sk-or-v1-…"
+              spellcheck="false"
+              autocapitalize="off"
+              autocomplete="off"
+            />
+            <button type="button" id="toggle-key" class="btn btn-ghost" aria-pressed="false">
+              Visa
+            </button>
+          </div>
+          <p class="hint">
+            Nyckeln lagras enbart lokalt i din webbläsare (chrome.storage.local) och
+            skickas aldrig någonstans utom till OpenRouter när du klickar
+            ”Genomlys”.
+            <a href="https://openrouter.ai/keys" target="_blank" rel="noopener noreferrer"
+              >Skaffa en nyckel</a
+            >.
+          </p>
+        </section>
+
+        <!-- Modell -->
+        <section class="field">
+          <label for="model">Modell</label>
+          <input
+            type="text"
+            id="model"
+            name="model"
+            list="model-suggestions"
+            placeholder="anthropic/claude-sonnet-4.6"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="off"
+          />
+          <datalist id="model-suggestions"></datalist>
+          <p class="hint">
+            Fritext – ange vilken modell-slug som helst som finns på OpenRouter.
+            Listan är bara förslag.
+          </p>
+        </section>
+
+        <!-- Rapportspråk -->
+        <section class="field">
+          <label for="report-language">Rapportspråk</label>
+          <select id="report-language" name="reportLanguage">
+            <option value="sv">Svenska</option>
+            <option value="en">English</option>
+          </select>
+          <p class="hint">Språket som analysrapporten skrivs på.</p>
+        </section>
+
+        <!-- Maskning -->
+        <section class="field field-check">
+          <label class="checkbox">
+            <input type="checkbox" id="redact" name="redactBeforeSend" />
+            <span>Maska URL:er innan de skickas till OpenRouter</span>
+          </label>
+          <p class="hint">
+            Döljer sökvägar och frågeparametrar i de URL:er som bifogas analysen.
+            Minskar vad OpenRouter får se, men kan göra bevisen mindre konkreta.
+          </p>
+        </section>
+
+        <!-- Knappar -->
+        <div class="actions">
+          <button type="submit" id="save" class="btn btn-primary">Spara</button>
+          <button type="button" id="test-key" class="btn btn-secondary">
+            Testa nyckel
+          </button>
+          <span id="status" class="status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <!-- Integritetsruta (#212-spärren) -->
+      <section class="privacy" id="privacy-box" aria-labelledby="privacy-title">
+        <h2 id="privacy-title">Så hanterar Genomlysning din integritet</h2>
+        <ul>
+          <li>
+            <strong>Allt sker lokalt i din webbläsare.</strong> Vi driver ingen
+            server. Kartläggningen av spårning, cookies och policytext bearbetas
+            helt och hållet på din egen dator.
+          </li>
+          <li>
+            <strong>Ett enda externt anrop.</strong> Det enda som lämnar din dator
+            är själva analysen, som skickas till OpenRouter med <em>din egen</em>
+            API-nyckel – och bara i det ögonblick du klickar ”Genomlys”.
+          </li>
+          <li>
+            <strong>Vi spårar inte dig.</strong> Inga analysverktyg, ingen
+            telemetri, inga konton. Din nyckel och dina inställningar lämnar aldrig
+            den lokala lagringen.
+          </li>
+          <li>
+            <strong>Cookie-värden skickas aldrig vidare</strong> – bara namn och
+            metadata används i granskningen.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

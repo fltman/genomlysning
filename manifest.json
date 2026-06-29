@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Genomlysning",
+  "version": "0.1.0",
+  "description": "Granska vilken sajt som helst: kartlägg all spårning, läs cookie-policyn mot verkligheten, och se rakt ut var underdriften sitter.",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "cookies",
+    "tabs",
+    "scripting",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Genomlysning – öppna granskningspanelen",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "options_page": "src/options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

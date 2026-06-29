@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genomlysning</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-title">
+      <span class="app-mark" aria-hidden="true"></span>
+      <h1>Genomlysning</h1>
+    </div>
+    <p class="app-subtitle">
+      Granska sajtens spårning och jämför cookie-policyn mot verkligheten.
+    </p>
+  </header>
+
+  <!-- Banner som visas när OpenRouter-nyckel saknas -->
+  <div id="banner" class="banner" hidden></div>
+
+  <div class="actions">
+    <button id="scan-btn" class="btn btn-primary" type="button">
+      Genomlys den här sidan
+    </button>
+    <button id="settings-link" class="btn btn-link" type="button">
+      Inställningar
+    </button>
+  </div>
+
+  <main class="content">
+    <!-- Progress / status -->
+    <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+    <!-- Transparens: exakt det som skickades till OpenRouter -->
+    <div id="transparency" class="transparency" hidden></div>
+
+    <!-- Resultat -->
+    <div id="report" class="report" aria-live="polite"></div>
+  </main>
+
+  <footer class="app-footer">
+    Allt körs lokalt i din webbläsare. Ett enda anrop görs &mdash; till OpenRouter
+    med din egen nyckel, och bara när du klickar Genomlys. Vi spårar dig inte.
+  </footer>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>
