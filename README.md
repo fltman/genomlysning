@@ -1,5 +1,7 @@
 # Genomlysning
 
+[![Support me on Patreon](https://img.shields.io/badge/Patreon-Support%20my%20work-FF424D?style=flat&logo=patreon&logoColor=white)](https://www.patreon.com/AndersBjarby)
+
 **Lättviktig medborgargranskning av tredjepartsspårning — direkt i webbläsaren.**
 
 Genomlysning är en Chrome-extension (Manifest V3) som låter vem som helst granska en
