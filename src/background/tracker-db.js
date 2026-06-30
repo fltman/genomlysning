@@ -109,6 +109,122 @@ const DB = [
   { d: ["bugsnag.com"], entity: "Bugsnag", category: "other", sensitivity: "low" },
   { d: ["newrelic.com", "nr-data.net"], entity: "New Relic", category: "other", sensitivity: "low" },
 
+  // ── Mer adtech / SSP / DSP / verifiering ────────────────────────────────────
+  { d: ["adroll.com"], entity: "AdRoll", category: "advertising", sensitivity: "high" },
+  { d: ["lijit.com", "sovrn.com"], entity: "Sovrn", category: "advertising", sensitivity: "high" },
+  { d: ["sonobi.com"], entity: "Sonobi", category: "advertising", sensitivity: "high" },
+  { d: ["yieldmo.com"], entity: "Yieldmo", category: "advertising", sensitivity: "high" },
+  { d: ["nativo.com", "postrelease.com"], entity: "Nativo", category: "advertising", sensitivity: "high" },
+  { d: ["revcontent.com"], entity: "Revcontent", category: "advertising", sensitivity: "high" },
+  { d: ["mgid.com"], entity: "MGID", category: "advertising", sensitivity: "high" },
+  { d: ["spotxchange.com", "spotx.tv"], entity: "SpotX (Magnite)", category: "advertising", sensitivity: "high" },
+  { d: ["3lift.com"], entity: "TripleLift", category: "advertising", sensitivity: "high" },
+  { d: ["serving-sys.com"], entity: "Sizmek (Amazon)", category: "advertising", sensitivity: "high" },
+  { d: ["flashtalking.com"], entity: "Flashtalking", category: "advertising", sensitivity: "high" },
+  { d: ["bidtheatre.com"], entity: "BidTheatre", category: "advertising", sensitivity: "high" },
+  { d: ["adsafeprotected.com"], entity: "Integral Ad Science", category: "advertising", sensitivity: "medium" },
+  { d: ["doubleverify.com"], entity: "DoubleVerify", category: "advertising", sensitivity: "medium" },
+  { d: ["moatads.com"], entity: "Oracle Moat", category: "advertising", sensitivity: "medium" },
+  { d: ["quora.com"], entity: "Quora Pixel", category: "advertising", sensitivity: "high" },
+  { d: ["mail.ru", "top-fwz1.mail.ru"], entity: "Mail.ru", category: "advertising", sensitivity: "high" },
+
+  // ── Identitet / datamäklare (mer) ───────────────────────────────────────────
+  { d: ["bluekai.com", "bkrtx.com"], entity: "Oracle BlueKai", category: "data-broker", sensitivity: "high" },
+  { d: ["krxd.net"], entity: "Salesforce DMP (Krux)", category: "data-broker", sensitivity: "high" },
+  { d: ["tapad.com"], entity: "Tapad", category: "data-broker", sensitivity: "high" },
+  { d: ["eyeota.net"], entity: "Eyeota (Dun & Bradstreet)", category: "data-broker", sensitivity: "high" },
+  { d: ["adsymptotic.com"], entity: "Drawbridge", category: "data-broker", sensitivity: "high" },
+  { d: ["semasio.net"], entity: "Semasio", category: "data-broker", sensitivity: "high" },
+  { d: ["zeotap.com"], entity: "Zeotap", category: "data-broker", sensitivity: "high" },
+  { d: ["audienceproject.com", "userreport.com"], entity: "AudienceProject", category: "data-broker", sensitivity: "high" },
+  { d: ["mparticle.com"], entity: "mParticle", category: "data-broker", sensitivity: "high" },
+  { d: ["gigya.com"], entity: "SAP CDC (Gigya)", category: "data-broker", sensitivity: "high" },
+
+  // ── Sessionsinspelning & produktanalys (mer) ────────────────────────────────
+  { d: ["heap.io", "heapanalytics.com"], entity: "Heap", category: "analytics", sensitivity: "medium" },
+  { d: ["pendo.io"], entity: "Pendo", category: "analytics", sensitivity: "medium" },
+  { d: ["logrocket.com", "lr-ingest.io", "lr-in.com"], entity: "LogRocket", category: "session-recording", sensitivity: "high" },
+  { d: ["inspectlet.com"], entity: "Inspectlet", category: "session-recording", sensitivity: "high" },
+  { d: ["crazyegg.com"], entity: "Crazy Egg", category: "session-recording", sensitivity: "high" },
+  { d: ["luckyorange.com", "luckyorange.net"], entity: "Lucky Orange", category: "session-recording", sensitivity: "high" },
+  { d: ["quantummetric.com"], entity: "Quantum Metric", category: "session-recording", sensitivity: "high" },
+
+  // ── Webbanalys (mer, inkl. integritetsvänliga) ──────────────────────────────
+  { d: ["statcounter.com"], entity: "StatCounter", category: "analytics", sensitivity: "medium" },
+  { d: ["getclicky.com", "clicky.com"], entity: "Clicky", category: "analytics", sensitivity: "medium" },
+  { d: ["mc.yandex.ru", "yandex.ru", "yandex.com"], entity: "Yandex", category: "analytics", sensitivity: "high" },
+  { d: ["hm.baidu.com", "baidu.com"], entity: "Baidu", category: "analytics", sensitivity: "high" },
+  { d: ["plausible.io"], entity: "Plausible", category: "analytics", sensitivity: "low" },
+  { d: ["usefathom.com"], entity: "Fathom Analytics", category: "analytics", sensitivity: "low" },
+  { d: ["simpleanalytics.com", "simpleanalyticscdn.com"], entity: "Simple Analytics", category: "analytics", sensitivity: "low" },
+  { d: ["matomo.cloud"], entity: "Matomo Cloud", category: "analytics", sensitivity: "low" },
+
+  // ── Tagghanterare / CDP (mer) ───────────────────────────────────────────────
+  { d: ["tiqcdn.com", "tealium.com", "tealiumiq.com"], entity: "Tealium", category: "tag-manager", sensitivity: "medium" },
+  { d: ["adobedtm.com", "assets.adobedtm.com"], entity: "Adobe Experience (Launch/DTM)", category: "tag-manager", sensitivity: "medium" },
+  { d: ["ensighten.com"], entity: "Ensighten", category: "tag-manager", sensitivity: "medium" },
+  { d: ["tagcommander.com", "commander1.com"], entity: "Commanders Act", category: "tag-manager", sensitivity: "medium" },
+  { d: ["rudderstack.com", "rudderlabs.com"], entity: "RudderStack", category: "analytics", sensitivity: "medium" },
+
+  // ── A/B-test & optimering ───────────────────────────────────────────────────
+  { d: ["optimizely.com", "optimizelyapis.com"], entity: "Optimizely", category: "ab-testing", sensitivity: "medium" },
+  { d: ["visualwebsiteoptimizer.com", "vwo.com", "wingify.com"], entity: "VWO", category: "ab-testing", sensitivity: "medium" },
+  { d: ["abtasty.com"], entity: "AB Tasty", category: "ab-testing", sensitivity: "medium" },
+  { d: ["kameleoon.com", "kameleoon.eu"], entity: "Kameleoon", category: "ab-testing", sensitivity: "medium" },
+  { d: ["convertexperiments.com", "convert.com"], entity: "Convert", category: "ab-testing", sensitivity: "medium" },
+  { d: ["dynamicyield.com"], entity: "Dynamic Yield (Mastercard)", category: "ab-testing", sensitivity: "medium" },
+
+  // ── Marknadsföring / e-post / push ──────────────────────────────────────────
+  { d: ["klaviyo.com"], entity: "Klaviyo", category: "marketing", sensitivity: "high" },
+  { d: ["list-manage.com", "mailchimp.com", "mailchi.mp"], entity: "Mailchimp (Intuit)", category: "marketing", sensitivity: "medium" },
+  { d: ["marketo.net", "mktoresp.com", "mktoweb.com"], entity: "Marketo (Adobe)", category: "marketing", sensitivity: "high" },
+  { d: ["pardot.com"], entity: "Pardot (Salesforce)", category: "marketing", sensitivity: "high" },
+  { d: ["eloqua.com", "en25.com"], entity: "Oracle Eloqua", category: "marketing", sensitivity: "high" },
+  { d: ["exacttarget.com", "marketingcloudapis.com"], entity: "Salesforce Marketing Cloud", category: "marketing", sensitivity: "high" },
+  { d: ["braze.com", "appboycdn.com"], entity: "Braze", category: "marketing", sensitivity: "high" },
+  { d: ["activecampaign.com"], entity: "ActiveCampaign", category: "marketing", sensitivity: "medium" },
+  { d: ["omnisend.com"], entity: "Omnisend", category: "marketing", sensitivity: "medium" },
+  { d: ["onesignal.com", "os.tc"], entity: "OneSignal", category: "marketing", sensitivity: "medium" },
+  { d: ["pushwoosh.com"], entity: "Pushwoosh", category: "marketing", sensitivity: "medium" },
+
+  // ── Kundsupport / chattwidgetar ─────────────────────────────────────────────
+  { d: ["intercom.io", "intercomcdn.com", "intercom.com"], entity: "Intercom", category: "customer-support", sensitivity: "medium" },
+  { d: ["zendesk.com", "zdassets.com", "zopim.com"], entity: "Zendesk", category: "customer-support", sensitivity: "medium" },
+  { d: ["drift.com"], entity: "Drift", category: "customer-support", sensitivity: "medium" },
+  { d: ["tawk.to"], entity: "Tawk.to", category: "customer-support", sensitivity: "medium" },
+  { d: ["livechatinc.com", "livechat.com"], entity: "LiveChat", category: "customer-support", sensitivity: "medium" },
+  { d: ["crisp.chat"], entity: "Crisp", category: "customer-support", sensitivity: "medium" },
+  { d: ["freshchat.com", "freshworks.com"], entity: "Freshworks", category: "customer-support", sensitivity: "medium" },
+  { d: ["olark.com"], entity: "Olark", category: "customer-support", sensitivity: "medium" },
+
+  // ── Affiliate / konvertering ────────────────────────────────────────────────
+  { d: ["dpbolvw.net", "anrdoezrs.net", "tkqlhce.com", "emjcd.com", "jdoqocy.com", "kqzyfj.com", "ftjcfx.com"], entity: "CJ Affiliate", category: "affiliate", sensitivity: "medium" },
+  { d: ["linksynergy.com"], entity: "Rakuten Advertising", category: "affiliate", sensitivity: "medium" },
+  { d: ["impact.com", "impactradius-event.com"], entity: "Impact", category: "affiliate", sensitivity: "medium" },
+  { d: ["awin1.com", "awin.com", "zenaps.com"], entity: "Awin", category: "affiliate", sensitivity: "medium" },
+  { d: ["adtraction.com"], entity: "Adtraction", category: "affiliate", sensitivity: "medium" },
+  { d: ["partner-ads.com"], entity: "Partner-ads", category: "affiliate", sensitivity: "medium" },
+  { d: ["webgains.com"], entity: "Webgains", category: "affiliate", sensitivity: "medium" },
+
+  // ── Embeds / video / kommentarer (sociala) ──────────────────────────────────
+  { d: ["vimeo.com", "vimeocdn.com"], entity: "Vimeo", category: "social", sensitivity: "medium" },
+  { d: ["brightcove.com", "brightcove.net"], entity: "Brightcove", category: "social", sensitivity: "medium" },
+  { d: ["jwpcdn.com", "jwplayer.com", "jwpsrv.com"], entity: "JW Player", category: "social", sensitivity: "medium" },
+  { d: ["wistia.com", "wistia.net", "wi.st"], entity: "Wistia", category: "social", sensitivity: "medium" },
+  { d: ["disqus.com", "disquscdn.com"], entity: "Disqus", category: "social", sensitivity: "high" },
+  { d: ["addthis.com"], entity: "AddThis (Oracle)", category: "social", sensitivity: "high" },
+  { d: ["sharethis.com"], entity: "ShareThis", category: "social", sensitivity: "high" },
+  { d: ["vk.com", "vk.ru", "userapi.com"], entity: "VK", category: "social", sensitivity: "high" },
+
+  // ── CMP / consent (mer) ─────────────────────────────────────────────────────
+  { d: ["trustarc.com", "truste.com"], entity: "TrustArc", category: "consent", sensitivity: "low" },
+  { d: ["iubenda.com"], entity: "Iubenda", category: "consent", sensitivity: "low" },
+  { d: ["osano.com"], entity: "Osano", category: "consent", sensitivity: "low" },
+  { d: ["axept.io"], entity: "Axeptio", category: "consent", sensitivity: "low" },
+  { d: ["termly.io"], entity: "Termly", category: "consent", sensitivity: "low" },
+  { d: ["cookiefirst.com"], entity: "CookieFirst", category: "consent", sensitivity: "low" },
+  { d: ["fundingchoicesmessages.google.com"], entity: "Google Funding Choices", category: "consent", sensitivity: "low" },
+
   // ── Rena CDN:er ─────────────────────────────────────────────────────────────
   { d: ["cloudflare.com", "cloudflareinsights.com"], entity: "Cloudflare", category: "cdn", sensitivity: "low" },
   { d: ["cloudfront.net"], entity: "Amazon CloudFront", category: "cdn", sensitivity: "low" },
@@ -204,6 +320,9 @@ const TRACKER_CATEGORIES = new Set([
   "session-recording",
   "data-broker",
   "tag-manager",
+  "ab-testing",
+  "marketing",
+  "affiliate",
 ]);
 
 function decorate(post) {

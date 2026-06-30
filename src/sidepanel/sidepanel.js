@@ -8,6 +8,7 @@ import { loadSettings } from "../shared/schema.js";
 import { buildMessages } from "../analysis/prompt.js";
 import { callAnalysis } from "../analysis/openrouter.js";
 import { renderReport } from "./render.js";
+import { buildMarkdown, buildJson, buildFilename, downloadText, copyText } from "./export.js";
 
 const STEP_COUNT = 5;
 
@@ -23,6 +24,7 @@ const els = {
   banner: document.getElementById("banner"),
   status: document.getElementById("status"),
   transparency: document.getElementById("transparency"),
+  exportBar: document.getElementById("export-bar"),
   report: document.getElementById("report"),
 };
 
@@ -167,14 +169,16 @@ async function onScanClick() {
 
     // ── Steg 5: rita rapport ────────────────────────────────────────────
     setStatus(5, "Sammanställer rapport…");
+    const reportData = {
+      analysis,
+      scan,
+      scrape,
+      model: settings.model,
+      lang: settings.reportLanguage || "sv",
+    };
     try {
-      renderReport(els.report, {
-        analysis,
-        scan,
-        scrape,
-        model: settings.model,
-        lang: settings.reportLanguage || "sv",
-      });
+      renderReport(els.report, reportData);
+      showExportBar(reportData);
     } catch (e) {
       throw new Error("Kunde inte rita rapporten. " + cleanMsg(e));
     }
@@ -307,6 +311,49 @@ function showTransparency(messages) {
   els.transparency.hidden = false;
 }
 
+/* ── Exportbar ────────────────────────────────────────────────────────── */
+function showExportBar(data) {
+  els.exportBar.replaceChildren();
+
+  els.exportBar.appendChild(makeEl("span", "export-label", "Exportera:"));
+
+  const mdBtn = makeEl("button", "btn btn-small", "⬇ Markdown");
+  mdBtn.type = "button";
+  mdBtn.addEventListener("click", () => {
+    try {
+      downloadText(buildFilename(data.scan, "md"), buildMarkdown(data), "text/markdown;charset=utf-8");
+    } catch (e) {
+      console.warn("Genomlysning: md-export misslyckades.", e);
+    }
+  });
+
+  const copyBtn = makeEl("button", "btn btn-small", "⧉ Kopiera");
+  copyBtn.type = "button";
+  copyBtn.addEventListener("click", async () => {
+    const ok = await copyText(buildMarkdown(data));
+    const original = "⧉ Kopiera";
+    copyBtn.textContent = ok ? "✓ Kopierat!" : "Kunde inte kopiera";
+    setTimeout(() => {
+      copyBtn.textContent = original;
+    }, 1600);
+  });
+
+  const jsonBtn = makeEl("button", "btn btn-small", "⬇ JSON");
+  jsonBtn.type = "button";
+  jsonBtn.addEventListener("click", () => {
+    try {
+      downloadText(buildFilename(data.scan, "json"), buildJson(data), "application/json");
+    } catch (e) {
+      console.warn("Genomlysning: json-export misslyckades.", e);
+    }
+  });
+
+  els.exportBar.appendChild(mdBtn);
+  els.exportBar.appendChild(copyBtn);
+  els.exportBar.appendChild(jsonBtn);
+  els.exportBar.hidden = false;
+}
+
 /* ── Status-UI ────────────────────────────────────────────────────────── */
 function startScanUI() {
   scanning = true;
@@ -315,6 +362,8 @@ function startScanUI() {
   els.report.replaceChildren();
   els.transparency.hidden = true;
   els.transparency.replaceChildren();
+  els.exportBar.hidden = true;
+  els.exportBar.replaceChildren();
   els.status.hidden = false;
   els.status.classList.remove("status-error");
   els.status.replaceChildren();

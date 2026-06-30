@@ -51,6 +51,8 @@ Två ledstjärnor styr allt i projektet:
    och renderas som en strukturerad rapport: omdöme, samtyckesanalys, känsligt
    dataläckage, policygap (vad policyn *påstår* mot verkligheten), tracker-sammanfattning
    och rekommendationer.
+6. **Exportera & dela.** Rapporten kan laddas ner som Markdown eller JSON, eller kopieras
+   till urklipp — t.ex. för att bifoga en anmälan eller dela en granskning.
 
 ---
 
@@ -133,7 +135,8 @@ genomlysning/
     │   ├── sidepanel.html
     │   ├── sidepanel.css
     │   ├── sidepanel.js           Orkestrerar scan + rendering
-    │   └── render.js              Rapport-rendering (DOM)
+    │   ├── render.js              Rapport-rendering (DOM)
+    │   └── export.js              Markdown-/JSON-export + kopiera till urklipp
     └── options/
         ├── options.html
         ├── options.css
