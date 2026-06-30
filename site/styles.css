@@ -106,6 +106,9 @@ h3 { font-size: 1.18rem; font-weight: 700; }
 .btn-primary:hover { background: var(--accent-hover); }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
 .btn-ghost:hover { border-color: var(--ink); }
+/* Ljus variant på mörka band (t.ex. slut-CTA) så knappen syns. */
+.band-dark .btn-ghost { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+.band-dark .btn-ghost:hover { border-color: #fff; background: rgba(255, 255, 255, 0.08); }
 
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 0; }
 .cta-row.center { justify-content: center; }
