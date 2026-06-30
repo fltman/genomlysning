@@ -147,6 +147,15 @@ genomlysning/
 
 ---
 
+## Webbplats
+
+Produktsajten ligger i `site/` — en helt statisk sida (inga externa resurser, ingen
+spårning, så att den klarar sin egen Genomlysning). Driftsätts på
+<https://genomlysning.bjarby.com>. Ladda upp innehållet i `site/` till webbroten på en
+valfri webbserver (LAMP fungerar direkt; `.htaccess` sätter säkerhetsheaders + CSP).
+
+---
+
 ## Licens
 
 MIT. Se `LICENSE` om sådan medföljer, annars gäller MIT-villkoren i sin helhet.

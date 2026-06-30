@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genomlysning – se vad sajten egentligen gör bakom cookie-rutan</title>
+  <meta name="description" content="Lättviktig medborgargranskning som Chrome-tillägg: kartlägg all spårning på en sajt, läs cookie-policyn mot verkligheten, och se rakt ut var underdriften sitter. Gratis, öppen källkod, allt körs lokalt." />
+  <meta name="theme-color" content="#0f141b" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Genomlysning – granska sajters spårning på sekunder" />
+  <meta property="og:description" content="Kartlägg varje tredjepartsanrop, läs cookie-policyn mot verkligheten, och se var underdriften sitter. Allt lokalt, din egen nyckel, öppen källkod." />
+  <meta property="og:image" content="genomlysning-512.png" />
+  <meta property="og:url" content="https://genomlysning.bjarby.com/" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Genomlysning – till toppen">
+      <img src="favicon.png" alt="" width="32" height="32" class="brand-mark" />
+      <span class="brand-name">Genomlysning</span>
+    </a>
+    <nav class="site-nav" aria-label="Huvudmeny">
+      <a href="#sa-funkar">Så funkar det</a>
+      <a href="#exempel">Exempel</a>
+      <a href="#integritet">Integritet</a>
+      <a href="#installera">Installera</a>
+      <a class="nav-gh" href="https://github.com/fltman/genomlysning" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ── HERO ─────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Medborgargranskning · Chrome-tillägg · Öppen källkod</p>
+        <h1>Se vad sajten <span class="hl">egentligen</span> gör bakom cookie-rutan.</h1>
+        <p class="lede">
+          Genomlysning laddar om vilken sajt som helst, kartlägger varje tredjepartsanrop,
+          och läser den luddiga cookie-texten mot vad som faktiskt händer — och säger rakt
+          ut var <strong>underdriften</strong> sitter.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#installera">Installera gratis</a>
+          <a class="btn btn-ghost" href="https://github.com/fltman/genomlysning" rel="noopener">Källkod på GitHub</a>
+        </div>
+        <p class="hero-foot">
+          Gratis. Allt körs lokalt i din webbläsare. Du använder din egen OpenRouter-nyckel.
+        </p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img src="genomlysning-512.png" alt="" width="300" height="300" class="hero-logo" />
+        <div class="hero-glow"></div>
+      </div>
+    </section>
+
+    <!-- ── STORY / VISION ───────────────────────────────────────────── -->
+    <section class="band">
+      <div class="band-inner narrow">
+        <h2>Det du förr fick göra för hand — på sekunder.</h2>
+        <p>
+          2018 fick man installera Ghostery, klicka runt och bilda sig en egen uppfattning.
+          Idag gör en agent hela rundan på sekunder: kartlägger varje spårare, ställer den
+          mjuka policytexten mot den hårda verkligheten, och pekar ut glappet.
+        </p>
+        <p>
+          Och den fångar inte bara <em>att</em> en Facebook-pixel ligger där — utan
+          <strong>vilken känslig data som riskerar läcka</strong>. Läser du en artikel om
+          ett politiskt parti och sidans URL skickas till Meta? Då rör det
+          <strong>art. 9 i GDPR</strong> — särskilt skyddade personuppgifter.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── SÅ FUNKAR DET ────────────────────────────────────────────── -->
+    <section id="sa-funkar" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Så funkar det</p>
+        <h2>Fyra steg, en blottad sanning.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <h3>Mät samtycke genom att inte ge det</h3>
+          <p>
+            Verktyget laddar om sidan utan att röra cookie-banderollen. Allt som ändå
+            avfyras gjorde det alltså <strong>utan att du sa ja</strong>. Det är hela poängen.
+          </p>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <h3>Kartlägg varje tredjepartsanrop</h3>
+          <p>
+            Varje anrop klassas mot en kurerad databas på
+            <strong>320+ spårningsdomäner</strong> — vem som äger dem, vilken kategori,
+            hur känsliga de är.
+          </p>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <h3>Plocka fram det faktiska beviset</h3>
+          <p>
+            Meta-pixelns <code>dl</code>-parameter innehåller sidans URL i klartext.
+            Genomlysning visar exakt vilken artikel-URL som skickades — inte spekulation,
+            fångad payload.
+          </p>
+        </li>
+        <li class="step">
+          <span class="step-num">4</span>
+          <h3>Låt en LLM säga det rakt ut</h3>
+          <p>
+            Beviset plus policytexten skickas till OpenRouter med <strong>din egen
+            nyckel</strong>. Svaret blir en strukturerad rapport: omdöme, samtyckesanalys,
+            känsligt dataläckage och policyglapp.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ── EXEMPEL / SHOWCASE ───────────────────────────────────────── -->
+    <section id="exempel" class="band band-dark">
+      <div class="band-inner">
+        <div class="showcase">
+          <div class="showcase-text">
+            <p class="eyebrow">Ett verkligt exempel</p>
+            <h2>"Skickar Expressen dina politiska åsikter till Facebook?"</h2>
+            <p>
+              Frågan från 2018 går äntligen att svara på automatiskt. När en
+              annonspixel triggar på en politisk artikel fångar Genomlysning inte bara
+              pixeln — utan <strong>vilken känslig data som riskerar läcka, till vem, och
+              med vilket bevis</strong>.
+            </p>
+            <p class="muted-note">
+              Fynden ramas in som <strong>misstankar att granska vidare</strong> — inte
+              juridiska domslut. Att en URL rör ett känsligt ämne bevisar inte att just
+              du har åsikten.
+            </p>
+          </div>
+
+          <!-- Live HTML-mockup av en rapport, i samma stil som tillägget -->
+          <div class="report-card" role="img" aria-label="Exempel på en genomlysningsrapport">
+            <div class="rc-eyebrow">Verdikt</div>
+            <h3 class="rc-headline">Politikläsning skickas till Meta — utan samtycke</h3>
+            <span class="rc-badge sev-4">Allvarsgrad 4/5</span>
+            <p class="rc-blunt">
+              Sajten påstår att den respekterar din integritet och kräver samtycke — men
+              skickar din läsning av politiska artiklar till Meta innan du hunnit klicka.
+              Ord och handling stämmer inte.
+            </p>
+
+            <div class="rc-leak">
+              <div class="rc-leak-head">
+                <span class="rc-leak-cat">Politiska åsikter</span>
+                <span class="rc-badge sev-4 small">4/5</span>
+              </div>
+              <p><span class="rc-label">Mottagare:</span> Meta (Facebook)</p>
+              <p><span class="rc-label">Hur:</span> sidans URL i Meta-pixelns <code>dl</code>-parameter</p>
+              <p><span class="rc-label">GDPR:</span> Art. 9 – känsliga personuppgifter</p>
+              <p class="rc-evidence"><span class="rc-label">Bevis:</span> <code>…/nyheter/politik/…</code></p>
+            </div>
+
+            <div class="rc-stats">
+              <div><b>42</b><span>tredjepartsanrop</span></div>
+              <div><b class="hot">18</b><span>spårningsanrop</span></div>
+              <div><b>9</b><span>aktörer</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTEGRITET ───────────────────────────────────────────────── -->
+    <section id="integritet" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Byggd för integritet</p>
+        <h2>En granskning vem som helst kan köra — inte en compliance-koloss.</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-ic">🔒</div>
+          <h3>Allt körs lokalt</h3>
+          <p>Ingen server vi driver. Det enda externa anropet går till OpenRouter — med din egen nyckel, och bara när du klickar Genomlys.</p>
+        </div>
+        <div class="card">
+          <div class="card-ic">🕵️</div>
+          <h3>Ingen spårning av dig</h3>
+          <p>Ingen analytics, ingen telemetri. Cookie-<em>värden</em> lämnar aldrig din dator — bara namn och metadata används.</p>
+        </div>
+        <div class="card">
+          <div class="card-ic">🔍</div>
+          <h3>Full transparens</h3>
+          <p>Innan något skickas visar panelen exakt vad som går till OpenRouter. Vill du dölja URL:er finns ett maskningsläge.</p>
+        </div>
+        <div class="card">
+          <div class="card-ic">⚖️</div>
+          <h3>Misstanke, inte domslut</h3>
+          <p>Verktyget pekar ut vad som bör granskas vidare. Det ersätter ingen juridisk bedömning — det ger dig underlaget att ställa frågan.</p>
+        </div>
+      </div>
+
+      <p class="self-audit">
+        🪞 <strong>Den här sajten lever som den lär:</strong> noll tredjepartsanrop, inga
+        spårare, inga externa typsnitt, ingen analytics. Genomlys den själv — du hittar ingenting.
+      </p>
+    </section>
+
+    <!-- ── INSTALLERA ───────────────────────────────────────────────── -->
+    <section id="installera" class="band">
+      <div class="band-inner narrow">
+        <p class="eyebrow">Installera</p>
+        <h2>Igång på två minuter</h2>
+        <p class="install-note">
+          Genomlysning ligger ännu inte på Chrome Web Store — du läser in den som ett
+          uppackat tillägg (helt normalt för öppen källkod). Funkar i Chrome, Edge och Arc.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/fltman/genomlysning/archive/refs/heads/main.zip" rel="noopener">⬇ Ladda ner ZIP</a>
+          <a class="btn btn-ghost" href="https://github.com/fltman/genomlysning" rel="noopener">Visa på GitHub ↗</a>
+        </div>
+
+        <ol class="install-steps">
+          <li>Packa upp ZIP-filen någonstans du kan låta den ligga kvar.</li>
+          <li>Öppna <code>chrome://extensions</code> och slå på <strong>Utvecklarläge</strong> (uppe till höger).</li>
+          <li>Klicka <strong>Läs in okomprimerat</strong> och välj den uppackade mappen.</li>
+          <li>Skaffa en nyckel på <a href="https://openrouter.ai/keys" rel="noopener">openrouter.ai/keys</a> och klistra in den i tilläggets Inställningar.</li>
+          <li>Klicka på verktygsikonen, gå till en nyhetssajt och tryck <strong>Genomlys den här sidan</strong>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── FAQ ──────────────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">Vanliga frågor</p>
+        <h2>Kort och rakt</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Vad kostar det?</summary>
+          <p>Tillägget är gratis och öppen källkod (MIT). Du betalar bara OpenRouters egna,
+            små kostnader för analyserna — via din egen nyckel. En granskning kostar typiskt
+            några ören.</p>
+        </details>
+        <details>
+          <summary>Vart skickas min data?</summary>
+          <p>Ingenstans, förutom ett enda anrop till OpenRouter med din egen nyckel när du
+            klickar Genomlys. Det innehåller bevisen vi samlat (spårardomäner, beacon-parametrar,
+            policytext) — aldrig dina cookie-värden. Vi har ingen server och spårar dig inte.</p>
+        </details>
+        <details>
+          <summary>Är det här en juridisk bedömning?</summary>
+          <p>Nej. Genomlysning pekar ut <strong>misstankar att granska vidare</strong>. Att en
+            sid-URL rör ett känsligt ämne bevisar inte att just du har egenskapen. Använd det som
+            underlag — inte som dom.</p>
+        </details>
+        <details>
+          <summary>Funkar det på alla sajter?</summary>
+          <p>På de allra flesta. Interna webbläsarsidor (chrome://), tomma flikar och vissa
+            låsta sidor går inte att granska. Genomlysningen gäller den sida du står på, inte hela sajten.</p>
+        </details>
+        <details>
+          <summary>Varför måste sidan laddas om?</summary>
+          <p>För att kunna mäta vad som händer <em>innan</em> du ger samtycke. Genom att ladda om
+            utan att klicka i cookie-rutan ser vi exakt vilka spårare som avfyras ändå.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── SLUT-CTA ─────────────────────────────────────────────────── -->
+    <section class="band band-dark final-cta">
+      <div class="band-inner narrow center">
+        <h2>Skruva åt dem som faktiskt behöver granskas.</h2>
+        <p>Ladda ner Genomlysning och se vad din vardagssajt egentligen gör.</p>
+        <div class="cta-row center">
+          <a class="btn btn-primary" href="#installera">Installera gratis</a>
+          <a class="btn btn-ghost" href="https://github.com/fltman/genomlysning" rel="noopener">Källkod ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="favicon.png" alt="" width="24" height="24" />
+        <span>Genomlysning</span>
+      </div>
+      <p class="footer-meta">
+        Öppen källkod (MIT) · Byggd av <a href="https://bjarby.com" rel="noopener">Anders Bjarby</a> ·
+        <a href="https://github.com/fltman/genomlysning" rel="noopener">GitHub</a>
+      </p>
+      <p class="footer-note">Den här sajten laddar noll tredjepartsanrop.</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
