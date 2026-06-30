@@ -136,6 +136,19 @@ h3 { font-size: 1.18rem; font-weight: 700; }
   filter: blur(10px); z-index: 0;
 }
 
+/* ── Demo ─────────────────────────────────────────────────────────────── */
+.demo .video-wrap {
+  max-width: 880px;
+  margin: 26px auto 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+.demo .video-wrap video { display: block; width: 100%; height: 100%; }
+
 /* ── Sections & bands ─────────────────────────────────────────────────── */
 .section { max-width: var(--maxw); margin: 0 auto; padding: clamp(48px, 7vw, 84px) clamp(16px, 4vw, 40px); }
 .section-head { max-width: 40ch; margin-bottom: 40px; }
