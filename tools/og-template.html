@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #0f141b;
+    color: #fff;
+    position: relative;
+  }
+  .glow {
+    position: absolute; top: -180px; right: -160px;
+    width: 720px; height: 720px;
+    background: radial-gradient(circle, rgba(226,161,6,0.28), transparent 62%);
+    filter: blur(8px);
+  }
+  .card { position: relative; z-index: 1; height: 100%; padding: 64px 70px; display: flex; flex-direction: column; }
+  .wordmark { display: flex; align-items: center; gap: 14px; }
+  .wordmark img { width: 46px; height: 46px; border-radius: 10px; }
+  .wordmark b { font-size: 26px; font-weight: 800; letter-spacing: -0.01em; }
+  .wordmark span { color: #9aa6b4; font-size: 16px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-left: 4px; }
+
+  .mid { flex: 1; display: flex; align-items: center; gap: 40px; }
+  .text { flex: 1; }
+  .eyebrow { color: #e2a106; font-size: 17px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px; }
+  h1 { font-size: 60px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; }
+  h1 .hl { background: linear-gradient(180deg, transparent 60%, rgba(226,161,6,0.45) 60%); padding: 0 2px; }
+  .sub { margin-top: 22px; font-size: 24px; line-height: 1.45; color: #c2ccd8; max-width: 33ch; }
+
+  .visual { width: 320px; display: flex; justify-content: center; }
+  .visual img { width: 300px; height: 300px; border-radius: 30px; box-shadow: 0 24px 70px rgba(0,0,0,0.5); }
+
+  .foot { display: flex; align-items: center; justify-content: space-between; }
+  .url { color: #e2a106; font-size: 22px; font-weight: 800; }
+  .tag { color: #6b7686; font-size: 18px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="card">
+    <div class="wordmark">
+      <img src="genomlysning-512.png" alt="" />
+      <b>Genomlysning</b>
+      <span>medborgargranskning</span>
+    </div>
+
+    <div class="mid">
+      <div class="text">
+        <div class="eyebrow">Chrome-tillägg · öppen källkod</div>
+        <h1>Se vad sajten <span class="hl">egentligen</span> gör bakom cookie-rutan.</h1>
+        <p class="sub">Kartlägg spårningen, läs cookie-policyn mot verkligheten — och se var underdriften sitter.</p>
+      </div>
+      <div class="visual">
+        <img src="genomlysning-512.png" alt="" />
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="url">genomlysning.bjarby.com</span>
+      <span class="tag">Allt lokalt · din egen nyckel · ingen spårning</span>
+    </div>
+  </div>
+</body>
+</html>
